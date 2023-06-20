@@ -22,7 +22,7 @@ const Status = () => {
             borderRadius: "20px 20px",
             backgroundColor: "#fff",
             height: "28px",
-            width: "115px",
+            width: "130px",
             alignItems: "center",
             textAlign: "center",
             display: "flex",
@@ -30,7 +30,7 @@ const Status = () => {
             marginLeft: "9px",
           }}
         >
-          Sell all alerts{" "}
+          <Typography> See all alerts </Typography>
           <NavigateNextRoundedIcon
             style={{
               backgroundColor: "#ff0000",

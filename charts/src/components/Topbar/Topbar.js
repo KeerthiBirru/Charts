@@ -26,6 +26,9 @@ import { styled, alpha } from "@mui/material/styles";
 
 import InputBase from "@mui/material/InputBase";
 
+import "./Topbar.css";
+import Logo from "../../image/logo.jpeg";
+
 const Topbar = () => {
   const Search = styled("div")(({ theme }) => ({
     position: "relative",
@@ -71,7 +74,9 @@ const Topbar = () => {
   return (
     <div>
       {/* <AppBar position="static"> */}
-      <Toolbar sx={{ borderBottom: "2px solid" }}>
+      <Toolbar
+      //  sx={{ borderBottom: "1px solid" }}
+      >
         <IconButton
           size="large"
           edge="start"
@@ -79,16 +84,21 @@ const Topbar = () => {
           aria-label="open drawer"
           sx={{ mr: 2 }}
         >
-          <MenuIcon />
+          {/* <MenuIcon /> */}
+          <img src={Logo} alt="logo" width={30} height={30} />
         </IconButton>
 
         <Box sx={{ flexGrow: 1 }} />
 
-        {/* searc................................ ..........*/}
+        {/* search................................ ..........*/}
 
         <Box>
           <Search
-            sx={{ backgroundColor: "#F5F6F8", borderRadius: "20px 20px" }}
+            sx={{
+              backgroundColor: "#F5F6F8",
+              borderRadius: "20px 20px",
+              width: "200px",
+            }}
           >
             <SearchIconWrapper>
               <SearchIcon />
@@ -113,36 +123,20 @@ const Topbar = () => {
 
           <IconButton
             size="large"
-            aria-label="show 17 new notifications"
+            // aria-label="show 17 new notifications"
             color="inherit"
           >
-            <Badge badgeContent={17} color="error">
-              <NotificationsIcon />
-            </Badge>
+            {/* <Badge badgeContent={17} color="error"> */}
+            <NotificationsIcon />
+            {/* </Badge> */}
           </IconButton>
 
-          <IconButton
-            size="large"
-            edge="end"
-            aria-label="account of current user"
-            // aria-controls={menuId}
-            aria-haspopup="true"
-            // onClick={handleProfileMenuOpen}
-            color="inherit"
-          >
+          <IconButton className="helpicon">
             <HelpIcon />
             <ArrowDropDownSharpIcon />
           </IconButton>
 
-          <IconButton
-            size="large"
-            edge="end"
-            aria-label="account of current user"
-            // aria-controls={menuId}
-            aria-haspopup="true"
-            // onClick={handleProfileMenuOpen}
-            color="inherit"
-          >
+          <IconButton className="profile">
             <PersonIcon
               sx={{
                 border: "1px solid #DADADA",

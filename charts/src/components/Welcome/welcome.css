@@ -1,3 +1,4 @@
 .multicolor {
-  background-color: black;
+  /* background-color: black; */
+  background-image: linear-gradient(45deg, #ff007f, #ff593d);
 }

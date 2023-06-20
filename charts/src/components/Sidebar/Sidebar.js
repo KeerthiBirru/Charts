@@ -23,15 +23,20 @@ import ArrowDropDownIcon from "@mui/icons-material/ArrowDropDown";
 import ReportProblemIcon from "@mui/icons-material/ReportProblem";
 import ArrowDropDownSharpIcon from "@mui/icons-material/ArrowDropDownSharp";
 
+// import ListItemButton from '@mui/material/ListItemButton';
+
 import Welcome from "../Welcome/Welcome";
 import Status from "../Status/Status";
 import Planning from "../Planning/Planning";
+import Filters from "../Filters/Filters";
+import DataTable from "../Table/DataTable";
+import Investigation from "../OrderInvestigation/Investigation";
 const drawerWidth = 240;
 
 const Sidebar = () => {
   return (
     <div>
-      <Grid container spacing={2} py={2} justifyContent="space-between">
+      <Grid container spacing={2} py={3} justifyContent="space-between">
         <Grid item xs={2} height={900} mx={4}>
           <Box
             sx={{
@@ -138,7 +143,7 @@ const Sidebar = () => {
                 SKU Prioritization
               </Typography>
               <hr />
-              <Typography color="#415A6C" padding="6px" mx={3} fontSize={14}>
+              <Typography color="#415A6C" padding="4px" mx={3} fontSize={14}>
                 00S Risk Detection{" "}
               </Typography>
               <hr />
@@ -223,12 +228,35 @@ const Sidebar = () => {
               &#160; Historical Activations
             </Typography>{" "}
           </Box>
+          {/* logout........... */}
+          <Box
+            mt={32}
+            sx={{
+              borderRadius: "5px 5px",
+              backgroundColor: "#E7E7E7",
+              flexDirection: "row",
+              display: "flex",
+              padding: "8px",
+              // marginBottom: "20px",
+            }}
+          >
+            <PlayArrowSharpIcon
+              sx={{ color: "#415A6C", marginBlock: "3px", height: "18px" }}
+            />{" "}
+            <Typography color="#415A6C" fontFamily="inter">
+              {" "}
+              &#160; Log out
+            </Typography>{" "}
+          </Box>
         </Grid>
         {/* main  body...........................*/}
         <Grid item xs={9} p={2} sx={{ backgroundColor: "#E7E9EE" }}>
           <Welcome />
           <Status />
           <Planning />
+          <Filters />
+          <DataTable />
+          <Investigation />
         </Grid>
       </Grid>
     </div>

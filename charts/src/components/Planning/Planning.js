@@ -2,7 +2,7 @@ import React from "react";
 import { Box, Button, Grid, Typography } from "@mui/material";
 
 import GridViewSharpIcon from "@mui/icons-material/GridViewSharp";
-
+import "./Planning.css";
 const Planning = () => {
   const [flag, setFlag] = React.useState(true);
 
@@ -167,30 +167,28 @@ const Planning = () => {
               </Box>
             </Box>{" "}
             {/* ...................c. */}
-            <Button
-              onClick={handleClick}
-              variant="contained"
-              color={flag ? "primary" : "secondary"}
-              fullWidth
+            {/* <a href="Filters"> */}{" "}
+            <Box
+              className="filter"
+              sx={{
+                marginBlock: "10px",
+                borderRadius: "5px 5px ",
+                backgroundColor: "#fff",
+                padding: "20px 10px 20px 10px",
+                justifyContent: "space-between",
+                display: "flex",
+                cursor: "pointer",
+              }}
             >
-              <Box
-                sx={{
-                  //   marginBlock: "10px",
-                  borderRadius: "5px 5px ",
-                  // backgroundColor: "#FF007E",
-                  padding: "10px 5px 10px 5px",
-                  justifyContent: "space-between",
-                  display: "flex",
-                }}
-              >
-                <Box>
-                  <Typography color="#000">OSS Risk Detection</Typography>
-                </Box>
-                <Box>
-                  <GridViewSharpIcon />
-                </Box>
-              </Box>{" "}
-            </Button>
+              <Box>
+                <Typography color="#000">OSS Risk Detection</Typography>
+              </Box>
+              <Box>
+                <GridViewSharpIcon />
+              </Box>
+            </Box>{" "}
+            {/* </a> */}
+            {/* </Button> */}
             <Box
               sx={{
                 marginBlock: "10px",
