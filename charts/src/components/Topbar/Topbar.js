@@ -1,35 +1,31 @@
-import React, { useState } from "react";
+import React from "react";
 
-// import { styled, alpha } from "@mui/material/styles";
-import AppBar from "@mui/material/AppBar";
 import Box from "@mui/material/Box";
 import Toolbar from "@mui/material/Toolbar";
 import IconButton from "@mui/material/IconButton";
-import Typography from "@mui/material/Typography";
-// import InputBase from "@mui/material/InputBase";
-import Badge from "@mui/material/Badge";
-// import MenuItem from "@mui/material/MenuItem";
-// import Menu from "@mui/material/Menu";
-import MenuIcon from "@mui/icons-material/Menu";
-// import SearchIcon from "@mui/icons-material/Search";
-import AccountCircle from "@mui/icons-material/AccountCircle";
-import MailIcon from "@mui/icons-material/Mail";
-import NotificationsIcon from "@mui/icons-material/Notifications";
 import MoreIcon from "@mui/icons-material/MoreVert";
 
 import HelpIcon from "@mui/icons-material/Help";
 import ArrowDropDownSharpIcon from "@mui/icons-material/ArrowDropDownSharp";
 import PersonIcon from "@mui/icons-material/Person";
 
-import SearchIcon from "@mui/icons-material/Search";
 import { styled, alpha } from "@mui/material/styles";
 
 import InputBase from "@mui/material/InputBase";
 
 import "./Topbar.css";
-import Logo from "../../image/logo.jpeg";
+import Logo from "../../images/Logo-bar.png";
+import icon from "../../images/notification.png";
+import search from "../../images/search.png";
+import { useNavigate } from "react-router-dom";
 
 const Topbar = () => {
+  const navigate = useNavigate();
+
+  const handleClick = () => {
+    // Navigate to another URL
+    navigate("/");
+  };
   const Search = styled("div")(({ theme }) => ({
     position: "relative",
     borderRadius: theme.shape.borderRadius,
@@ -74,69 +70,42 @@ const Topbar = () => {
   return (
     <div>
       {/* <AppBar position="static"> */}
-      <Toolbar
-      //  sx={{ borderBottom: "1px solid" }}
-      >
-        <IconButton
-          size="large"
-          edge="start"
-          color="inherit"
-          aria-label="open drawer"
-          sx={{ mr: 2 }}
-        >
-          {/* <MenuIcon /> */}
-          <img src={Logo} alt="logo" width={30} height={30} />
-        </IconButton>
-
+      <Toolbar>
+        <img src={Logo} alt="logo" className="logo" onClick={handleClick} />
         <Box sx={{ flexGrow: 1 }} />
-
         {/* search................................ ..........*/}
-
         <Box>
           <Search
             sx={{
               backgroundColor: "#F5F6F8",
               borderRadius: "20px 20px",
-              width: "200px",
+              display: "flex",
+              color: "#415A6C",
             }}
           >
-            <SearchIconWrapper>
-              <SearchIcon />
-            </SearchIconWrapper>
             <StyledInputBase
-              placeholder="Search…"
+              placeholder="Search"
               inputProps={{ "aria-label": "search" }}
-            />
+            />{" "}
+            <img src={search} alt="search" className="search-icon" />
           </Search>
         </Box>
-
+        &#160;&#160;
         <Box sx={{ display: { xs: "none", md: "flex" } }}>
-          {/* <IconButton
-            size="large"
-            aria-label="show 4 new mails"
-            color="inherit"
-          >
-            <Badge badgeContent={4} color="error">
-              <MailIcon />
-            </Badge>
-          </IconButton> */}
-
-          <IconButton
-            size="large"
-            // aria-label="show 17 new notifications"
-            color="inherit"
-          >
-            {/* <Badge badgeContent={17} color="error"> */}
-            <NotificationsIcon />
-            {/* </Badge> */}
-          </IconButton>
-
-          <IconButton className="helpicon">
-            <HelpIcon />
-            <ArrowDropDownSharpIcon />
-          </IconButton>
-
-          <IconButton className="profile">
+          {/* <Badge badgeContent={17} color="error"> */}
+          <img src={icon} alt="notification" className="notification" />
+          {/* </Badge> */}
+          <HelpIcon
+            className="help-icon"
+            style={{ width: "30px", height: "30px", color: "#415A6C" }}
+          />
+          &#160;
+          <ArrowDropDownSharpIcon
+            className="helpdown-icon"
+            sx={{ color: "#466072" }}
+          />
+          &#160;
+          <Box className="profile">
             <PersonIcon
               sx={{
                 border: "1px solid #DADADA",
@@ -145,8 +114,9 @@ const Topbar = () => {
                 backgroundColor: "#DADADA",
               }}
             />
-            <ArrowDropDownSharpIcon />
-          </IconButton>
+            &#160;
+            <ArrowDropDownSharpIcon sx={{ color: "#466072" }} />
+          </Box>
         </Box>
         <Box sx={{ display: { xs: "flex", md: "none" } }}>
           <IconButton

@@ -3,8 +3,53 @@
   font-style: normal;
   font-size: 14px;
   color: #415A6C;
+  /* border: 1px solid ; */
+  min-height: 800px;
+  /* max-height: 800px; */
 
 }
+.log-box{ 
+    min-height: 116px;
+    /* max-height: 316px; */
+    position: relative;
+    /* border: 1px solid red; */
+    /* border: 1px solid red; */
+}
+.logout-icon{
+    
+    height: 20px;   
+    margin-top: 1px;
+}
+
+.logout-fixed{
+    display: flex;
+    border-radius:5px 5px ;
+    padding: 8px 12px 8px 12px;
+    background-color:#E7E9EE ;
+    margin-top: 73px;
+    gap: 8px;
+    cursor: pointer;
+    width: 167px;
+    margin-inline: 15px;
+    position: absolute;
+    /* border: 3px solid green; */
+    /* margin-bottom: -5px; */
+}
+
+@media only screen and (max-width: 1024px) {
+   
+
+    .logout-fixed{
+        width: 120px !important;
+    }
+
+    
+  }
+
+
+
+
+
 
 .sidebar-header{
     display: flex;
@@ -37,6 +82,7 @@
     cursor: pointer;
     width: auto;
     margin-inline: 15px;
+    /* box-shadow: 0px 1px 0px 0px #B7C3CA; */
 
 }
 
@@ -92,11 +138,11 @@
 }
 
 .dotted-line{
-    padding: 8px 12px 8px 12px;
+    /* padding: 8px 12px 8px 12px; */
     border-bottom: 1px dashed #B7C3CA;
     width: auto;
     margin-inline: 15px;
-    /* margin-top: 1%; */
+    margin-top: -8px;
 }
 
 .alert-icon{
@@ -105,11 +151,7 @@
     /* width: 13px; */
     /* align-items: center; */
 }
-.logout-icon{
-/* width: ; */
-height: 20px;   
-margin-top: 1px;
-}
+
 
 .css-ahj2mt-MuiTypography-root {
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
@@ -118,9 +160,29 @@ margin-top: 1px;
     font-size: 14px !important;
 }
 
-/* 
+.acrdn-s{
+min-height: 20px !important;
+}
+.MuiPaper-root MuiPaper-elevation MuiPaper-rounded MuiPaper-elevation1 MuiAccordion-root MuiAccordion-rounded MuiAccordion-gutters acrdn-main css-1elwnq4-MuiPaper-root-MuiAccordion-root{
+    margin-inline: 15px !important;
+}
 
-.log{
+.css-1elwnq4-MuiPaper-root-MuiAccordion-root:first-of-type {
+    margin-inline: 14px;
+}
+
+.css-1elwnq4-MuiPaper-root-MuiAccordion-root.Mui-expanded:last-of-type {
+    margin-bottom: 0;
+    margin-inline: 15px;
+}
+
+.ply-icon{
+    /* color: #ffffff ; */
+    height: 20px;
+}
+
+
+.s-h2{
     display: flex;
     border-radius:5px 5px ;
     padding: 8px 12px 8px 12px;
@@ -131,5 +193,9 @@ margin-top: 1px;
     cursor: pointer;
     width: auto;
     margin-inline: 15px;
+}
 
-} */
+.selectedMenu::selection {
+    background-color: red;
+}
+

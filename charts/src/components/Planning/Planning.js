@@ -1,221 +1,122 @@
 import React from "react";
-import { Box, Button, Grid, Typography } from "@mui/material";
-
-import GridViewSharpIcon from "@mui/icons-material/GridViewSharp";
+import { Box, Grid, Typography } from "@mui/material";
 import "./Planning.css";
-const Planning = () => {
-  const [flag, setFlag] = React.useState(true);
+import qubes from "../../images/qubes.png";
+import GridViewRoundedIcon from "@mui/icons-material/GridViewRounded";
 
-  const handleClick = () => {
-    setFlag(!flag);
+const Planning = ({ filterStatus }) => {
+  const handleFilterStatus = () => {
+    filterStatus(true);
   };
 
   return (
     <div>
       <Grid>
-        <Grid item xs={12} display="flex">
-          <Grid item xs={3} m={1}>
-            <Box
-              sx={{
-                borderRadius: "5px 5px ",
-                backgroundColor: "#00A6A5",
-                padding: "5px 10px 5px 10px",
-              }}
-            >
+        <Grid container spacing={2} item xs={12} mt={1}>
+          <Grid item xs={3}>
+            <Box className="pln-cards-header">
               <Typography color="#fff">Demand Planning</Typography>
             </Box>{" "}
-            <Box
-              sx={{
-                marginBlock: "10px",
-                borderRadius: "5px 5px ",
-                backgroundColor: "#fff",
-                padding: "20px 10px 20px 10px",
-                justifyContent: "space-between",
-                display: "flex",
-              }}
-            >
-              <Box>
-                <Typography color="#000">
+            <Box className="pln-card-bd">
+              <Box className="pln-cards-cnt">
+                <Typography fontSize={{ lg: 14, xs: 12 }} fontWeight={500}>
                   Forecast Builder - Sell Out
                 </Typography>
               </Box>
-              <Box>
-                <GridViewSharpIcon />
+              <Box className="pln-cards-cnt">
+                <GridViewRoundedIcon />
               </Box>
             </Box>{" "}
-            <Box
-              sx={{
-                borderRadius: "5px 5px ",
-                backgroundColor: "#fff",
-                padding: "20px 10px 20px 10px",
-                justifyContent: "space-between",
-                display: "flex",
-              }}
-            >
-              <Box>
-                <Typography color="#000">
-                  Forecast Builder - Sell Out
+            <Box className="pln-card-bd">
+              <Box className="pln-cards-cnt">
+                <Typography fontSize={{ lg: 14, xs: 12 }} fontWeight={500}>
+                  Market Price Match
                 </Typography>
               </Box>
-              <Box>
-                <GridViewSharpIcon />
+              <Box className="pln-cards-cnt">
+                <GridViewRoundedIcon />{" "}
               </Box>
             </Box>{" "}
           </Grid>
-          {/* demand scenarious................... */}
-          <Grid item xs={3} m={1}>
-            <Box
-              sx={{
-                borderRadius: "5px 5px ",
-                backgroundColor: "#00A6A5",
-                padding: "5px 10px 5px 10px",
-              }}
-            >
-              <Typography color="#fff">Demand Scenarious</Typography>
+          <Grid item xs={3}>
+            <Box className="pln-cards-header">
+              <Typography color="#fff">Demand Scenarios</Typography>
             </Box>{" "}
-            <Box
-              sx={{
-                marginBlock: "10px",
-                borderRadius: "5px 5px ",
-                backgroundColor: "#fff",
-                padding: "20px 10px 20px 10px",
-                justifyContent: "space-between",
-                display: "flex",
-              }}
-            >
-              <Box>
-                <Typography color="#000">Scenario Selection</Typography>
-              </Box>
-              <Box>
-                <GridViewSharpIcon />
-              </Box>
-            </Box>{" "}
-            <Box
-              sx={{
-                borderRadius: "5px 5px ",
-                backgroundColor: "#fff",
-                padding: "20px 10px 20px 10px",
-                justifyContent: "space-between",
-                display: "flex",
-              }}
-            >
-              <Box>
-                <Typography color="#000" fontSize={14}>
-                  Systematic data-driven forecast
+            <Box className="pln-card-bd">
+              <Box className="pln-cards-cnt">
+                <Typography fontSize={{ lg: 14, xs: 12 }} fontWeight={500}>
+                  Scenario Selection
                 </Typography>
               </Box>
-              <Box>
-                <GridViewSharpIcon />
+              <Box className="pln-cards-cnt">
+                <GridViewRoundedIcon />{" "}
+              </Box>
+            </Box>{" "}
+            <Box className="pln-card-bd-L">
+              <Box className="pln-cards-cnt">
+                <Typography fontSize={{ lg: 14, xs: 12 }} fontWeight={500} lineHeight="16px">
+                  Systamatic data-driven forecast validation
+                </Typography>
+              </Box>
+              <Box className="pln-cards-cnt">
+                <GridViewRoundedIcon />{" "}
               </Box>
             </Box>{" "}
           </Grid>
-          {/* Supply planning................... */}
-          <Grid item xs={3} m={1}>
-            <Box
-              sx={{
-                borderRadius: "5px 5px ",
-                backgroundColor: "#00A6A5",
-                padding: "5px 10px 5px 10px",
-              }}
-            >
-              <Typography color="#fff">Supplay Planning</Typography>
+
+          <Grid item xs={3}>
+            <Box className="pln-cards-header">
+              <Typography color="#fff">Supply Planning</Typography>
             </Box>{" "}
-            <Box
-              sx={{
-                marginBlock: "10px",
-                borderRadius: "5px 5px ",
-                backgroundColor: "#fff",
-                padding: "20px 10px 20px 10px",
-                justifyContent: "space-between",
-                display: "flex",
-              }}
-            >
-              <Box>
-                <Typography color="#000">Forecast Builder Sell-in</Typography>
+            <Box className="pln-card-bd">
+              <Box className="pln-cards-cnt">
+                <Typography fontSize={{ lg: 14, xs: 12 }} fontWeight={500}>
+                  Forecast builder - Sell-In{" "}
+                </Typography>
               </Box>
-              <Box>
-                <GridViewSharpIcon />
+              <Box className="pln-cards-cnt">
+                <GridViewRoundedIcon />{" "}
               </Box>
             </Box>{" "}
           </Grid>
-          {/* Distribution planning................... */}
-          <Grid item xs={3} m={1}>
-            <Box
-              sx={{
-                borderRadius: "5px 5px ",
-                backgroundColor: "#00A6A5",
-                padding: "5px 10px 5px 10px",
-              }}
-            >
+
+          <Grid item xs={3}>
+            <Box className="pln-cards-header">
               <Typography color="#fff">Distribution Planning</Typography>
             </Box>{" "}
-            <Box
-              sx={{
-                marginBlock: "10px",
-                borderRadius: "5px 5px ",
-                backgroundColor: "#fff",
-                padding: "20px 10px 20px 10px",
-                justifyContent: "space-between",
-                display: "flex",
-              }}
-            >
-              <Box>
-                <Typography color="#000">SKU Prioritisation</Typography>
+            <Box className="pln-card-bd">
+              <Box className="pln-cards-cnt">
+                <Typography fontSize={{ lg: 14, xs: 12 }} fontWeight={500}>
+                  SKU Prioritisation{" "}
+                </Typography>
               </Box>
-              <Box>
-                <GridViewSharpIcon />
+              <Box className="pln-cards-cnt">
+                <GridViewRoundedIcon />{" "}
               </Box>
             </Box>{" "}
-            {/* ...................c. */}
-            {/* <a href="Filters"> */}{" "}
-            <Box
-              className="filter"
-              sx={{
-                marginBlock: "10px",
-                borderRadius: "5px 5px ",
-                backgroundColor: "#fff",
-                padding: "20px 10px 20px 10px",
-                justifyContent: "space-between",
-                display: "flex",
-                cursor: "pointer",
-              }}
-            >
-              <Box>
-                <Typography color="#000">OSS Risk Detection</Typography>
+            <Box className="pln-card-bd42" onClick={handleFilterStatus}>
+              <Box className="pln-cards-cnt">
+                <Typography fontSize={{ lg: 14, xs: 12 }} fontWeight={500}>
+                  OOS Risk Detection
+                </Typography>
               </Box>
-              <Box>
-                <GridViewSharpIcon />
+              <Box className="pln-cards-cnt">
+                <GridViewRoundedIcon />{" "}
               </Box>
             </Box>{" "}
-            {/* </a> */}
-            {/* </Button> */}
-            <Box
-              sx={{
-                marginBlock: "10px",
-                borderRadius: "5px 5px ",
-                backgroundColor: "#fff",
-                padding: "20px 10px 20px 10px",
-                justifyContent: "space-between",
-                display: "flex",
-              }}
-            >
-              <Box>
-                <Typography color="#000">Smart Stock Reallocation</Typography>
+            <Box className="pln-card-bd">
+              <Box className="pln-cards-cnt">
+                <Typography fontSize={{ lg: 14, xs: 12 }} fontWeight={500}>
+                  Smart Stock Reallocation
+                </Typography>
               </Box>
-              <Box>
-                <GridViewSharpIcon />
+              <Box className="pln-cards-cnt">
+                <GridViewRoundedIcon />{" "}
               </Box>
             </Box>{" "}
           </Grid>
         </Grid>
       </Grid>
-      {/* <Button
-        onClick={handleClick}
-        variant="contained"
-        color={flag ? "primary" : "secondary"}
-      >
-        button
-      </Button> */}
     </div>
   );
 };

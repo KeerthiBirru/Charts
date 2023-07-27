@@ -1,182 +1,213 @@
 import React from "react";
 
-import { Box, Grid, Typography } from "@mui/material";
+import { Box, Grid, Link, Typography } from "@mui/material";
 
-import ReportProblemIcon from "@mui/icons-material/ReportProblem";
-import NavigateNextRoundedIcon from "@mui/icons-material/NavigateNextRounded";
+// import NavigateNextRoundedIcon from "@mui/icons-material/NavigateNextRounded";
+import Rightarrow from "../../images/Rightarrow.png";
 
-const Status = () => {
+import Error from "../../images/error.png";
+
+import "./Status.css";
+
+const Status = ({ filterStatus }) => {
+  const handleFilterStatus = () => {
+    filterStatus(true);
+  };
+
   return (
     <div>
-      <Box
-        p={1}
-        mt={5}
-        sx={{ justifyContent: "space-between", display: "flex" }}
-      >
-        <Typography fontSize={28} fontFamily="inter">
-          Current Status/ Alert Section
-        </Typography>
-        <Typography
-          fontSize={14}
-          sx={{
-            borderRadius: "20px 20px",
-            backgroundColor: "#fff",
-            height: "28px",
-            width: "130px",
-            alignItems: "center",
-            textAlign: "center",
-            display: "flex",
-            justifyContent: "space-evenly",
-            marginLeft: "9px",
-          }}
+      <div className="status">
+        <div>
+          <Typography fontSize={{ lg: 28, xs: 24 }} color="#415A6C">
+            Current Status / Alert Section
+          </Typography>
+        </div>
+        <div className="btn-alert">
+          &#160;&#160;
+          <p>See all alerts</p> &#160;&#160;
+          <img src={Rightarrow} alt="alerts" className="alt-icon" />
+          &#160;
+        </div>
+      </div>
+
+      <Grid container spacing={2} mt="-20px" border="">
+        <Grid
+          item
+          xs={4}
+          // m={1}
+          onClick={handleFilterStatus}
+          sx={{ cursor: "pointer" }}
         >
-          <Typography> See all alerts </Typography>
-          <NavigateNextRoundedIcon
-            style={{
-              backgroundColor: "#ff0000",
-              borderRadius: "50%",
-              color: "#fff",
+          <Box
+            sx={{
+              borderRadius: "5px 5px ",
+              backgroundColor: "#fff",
+              boxShadow: "0px 2px 0px 0px  rgba(0,0,0,0.3)",
+              height: "100%",
             }}
-          />
-        </Typography>{" "}
-      </Box>
-      <Grid>
-        <Grid item xs={12} display="flex">
-          <Grid item xs={4} m={1}>
-            <Box
-              sx={{
-                borderRadius: "5px 5px ",
-                backgroundColor: "#fff",
-                boxShadow: "0px 2px 0px 0px  rgba(0,0,0,0.3)",
-                height: "100%",
-              }}
-            >
-              <Box sx={{ display: "flex" }}>
-                <Box m={2}>
-                  <ReportProblemIcon sx={{ color: "red" }} />
-                </Box>
-                <Box m={1}>
-                  <Typography
-                    fontFamily="inter"
-                    fontWeight={600}
-                    fontSize={{ xl: 18, md: 14 }}
-                  >
-                    OSS Risk Detection on Airwick UK SKUs.
-                  </Typography>
-                </Box>
+          >
+            <Box sx={{ display: "flex", alignItems: "center" }}>
+              <Box>
+                <img
+                  src={Error}
+                  alt="error"
+                  className="error-icon"
+                  style={{ marginTop: "8px" }}
+                />{" "}
               </Box>
-              <hr />
-              <Box
-                p={1}
-                sx={{ display: "flex", justifyContent: "space-around" }}
-              >
-                <Box>
-                  <Typography
-                    color="#415A6C"
-                    fontWeight={500}
-                    fontSize={{ xl: 14, md: 12 }}
-                  >
-                    OSS Risk Dectected
-                  </Typography>
-                  <Typography fontWeight={500} fontSize={12}>
-                    Airwick Electrical Lemon
-                  </Typography>
-                  <Typography fontWeight={500} fontSize={12}>
-                    Airwick Electrical Lavender
-                  </Typography>
-                  <Typography fontWeight={500} fontSize={12}>
-                    Airwick Aersol Floral
-                  </Typography>
-                </Box>
-                <Box sx={{ marginBottom: "10px" }}>
+              <Box m={1}>
+                <Typography fontSize={{ lg: 18, xs: 13 }}>
+                  OOS Risk Detection on Airwick
+                </Typography>
+                <Typography fontSize={{ lg: 18, xs: 13 }}>
                   {" "}
-                  <Typography
-                    color="#415A6C"
-                    fontWeight={500}
-                    fontSize={{ xl: 14, md: 12 }}
+                  UK SKUs.
+                  <Link
+                    sx={{
+                      textDecoration: "none",
+                      color: "#7E919F",
+                      fontSize: "14px",
+                    }}
                   >
-                    Expected OLA
-                  </Typography>
-                  <Typography color="#F08C2A" fontWeight={500} fontSize={14}>
-                    84%
-                  </Typography>
-                  <Typography color="#F08C2A" fontWeight={500} fontSize={14}>
-                    86%
-                  </Typography>
-                  <Typography color="#F08C2A" fontWeight={500} fontSize={14}>
-                    87%
-                  </Typography>
-                </Box>
+                    {" "}
+                    Use cases
+                  </Link>
+                </Typography>
               </Box>
-            </Box>{" "}
-          </Grid>
-          <Grid item xs={4} m={1}>
+            </Box>
+            <hr />
             <Box
               sx={{
-                borderRadius: "5px 5px ",
-                backgroundColor: "#fff",
-                boxShadow: "0px 2px 0px 0px  rgba(0,0,0,0.3)",
-                height: "100%",
+                display: "flex",
+                justifyContent: "space-between",
+                marginInline: "11px",
+                marginBottom: "5px",
               }}
+              // marginBottom={{lg:1,xs:-1}}
             >
-              <Box sx={{ display: "flex" }}>
-                <Box m={2}>
-                  <ReportProblemIcon sx={{ color: "red" }} />
-                </Box>
-                <Box m={1}>
-                  <Typography
-                    fontFamily="inter"
-                    fontWeight={600}
-                    fontSize={{ xl: 18, md: 14 }}
-                  >
-                    Vanish SKUs identifier for promotion prioritisation
-                  </Typography>
-                </Box>
-              </Box>
-              <hr />
-              <Box sx={{ display: "flex", justifyContent: "space-around" }}>
+              <Box>
+                <Typography color="#415A6C" fontSize="12px">
+                  OOS Risk Dectected
+                </Typography>
+                <Typography fontSize={{ lg: 14, xs: 12 }}>
+                  Airwick Electrical Lemon
+                </Typography>
                 <Typography
-                  p={2}
-                  fontWeight={500}
-                  fontSize={{ xl: 16, md: 14 }}
+                  fontSize={{ lg: 14, xs: 12 }}
+                  lineHeight={{ lg: "16px", xs: "16px" }}
                 >
-                  Some SKUs have opportunity for promotion priotisation
+                  Airwick Electrical Lavender
+                </Typography>
+                <Typography fontSize={{ lg: 14, xs: 12 }}>
+                  Airwick Aersol Floral
                 </Typography>
               </Box>
-            </Box>{" "}
-          </Grid>
-          <Grid item xs={4} m={1}>
-            <Box
-              sx={{
-                borderRadius: "5px 5px ",
-                backgroundColor: "#fff",
-                boxShadow: "0px 2px 0px 0px  rgba(0,0,0,0.3)",
-                height: "100%",
-              }}
-            >
-              <Box sx={{ display: "flex" }}>
-                <Box m={2}>
-                  <ReportProblemIcon sx={{ color: "red" }} />
-                </Box>
-                <Box m={1}>
-                  <Typography
-                    fontFamily="inter"
-                    fontWeight={600}
-                    fontSize={{ xl: 18, md: 14 }}
-                  >
-                    OSS Risk Detection on Finish <br />
-                    UK SKUs
-                  </Typography>
-                </Box>
-              </Box>
-              <hr />
-              <Box sx={{ display: "flex", justifyContent: "space-around" }}>
-                <Typography p={2} fontSize={{ xl: 16, md: 14 }}>
-                  Some SKUs required action due to OOS risk, press to inspect
+              <Box>
+                {" "}
+                <Typography color="#415A6C" fontWeight={500} fontSize="12px">
+                  Expected OLA
+                </Typography>
+                <Typography
+                  sx={{ marginBlock: "2px" }}
+                  color="#F08C2A"
+                  fontWeight={500}
+                  fontSize={12}
+                >
+                  84%
+                </Typography>
+                <Typography
+                  color="#F08C2A"
+                  fontWeight={500}
+                  fontSize={12}
+                  lineHeight={{ lg: "16px", xs: "12px" }}
+                >
+                  86%
+                </Typography>
+                <Typography
+                  sx={{ marginBlock: "2px" }}
+                  color="#F08C2A"
+                  fontWeight={500}
+                  fontSize={12}
+                >
+                  87%
                 </Typography>
               </Box>
-            </Box>{" "}
-          </Grid>
+            </Box>
+          </Box>{" "}
+        </Grid>
+        <Grid item xs={4} sx={{ cursor: "pointer" }}>
+          <Box
+            sx={{
+              borderRadius: "5px 5px ",
+              backgroundColor: "#fff",
+              boxShadow: "0px 2px 0px 0px  rgba(0,0,0,0.3)",
+              height: "100%",
+            }}
+          >
+            <Box sx={{ display: "flex", alignItems: "center" }}>
+              <Box>
+                <img
+                  src={Error}
+                  alt="error"
+                  className="error-icon"
+                  style={{ marginTop: "8px" }}
+                />{" "}
+              </Box>
+              <Box m={1}>
+                <Typography fontSize={{ lg: 18, xs: 13 }}>
+                  Vanish SKUs identified for
+                </Typography>
+                <Typography fontSize={{ lg: 18, xs: 13 }}>
+                  promotion prioritisation
+                </Typography>
+              </Box>
+            </Box>
+            <hr />
+            <Box sx={{ marginInline: "20px", color: "#415A6C" }}>
+              <Typography
+                fontSize={{ lg: 16, xs: 14 }}
+                lineHeight={{ lg: "20px", xs: "17px" }}
+              >
+                Some SKUs have opportunity for promotion priotisation.{" "}
+              </Typography>
+            </Box>
+          </Box>{" "}
+        </Grid>
+        <Grid item xs={4} sx={{ cursor: "pointer" }}>
+          <Box
+            sx={{
+              borderRadius: "5px 5px ",
+              backgroundColor: "#fff",
+              boxShadow: "0px 2px 0px 0px  rgba(0,0,0,0.3)",
+              height: "100%",
+            }}
+          >
+            <Box sx={{ display: "flex", alignItems: "center" }}>
+              <Box>
+                <img
+                  src={Error}
+                  alt="error"
+                  className="error-icon"
+                  style={{ marginTop: "8px" }}
+                />{" "}
+              </Box>
+              <Box m={1}>
+                <Typography fontSize={{ lg: 18, xs: 13 }}>
+                  OOS Risk Detected on Finish
+                </Typography>
+                <Typography fontSize={{ lg: 18, xs: 13 }}>UK SKUs </Typography>
+              </Box>
+            </Box>
+            <hr />
+            <Box sx={{ marginInline: "20px", color: "#415A6C" }}>
+              <Typography
+                fontStyle={{ lg: 16, xs: 13 }}
+                lineHeight={{ lg: "20px", xs: "17px" }}
+              >
+                Some SKUs require actions due to OOS risk, press to inspect.{" "}
+              </Typography>
+            </Box>
+          </Box>{" "}
         </Grid>
       </Grid>
     </div>
